@@ -12,8 +12,8 @@ Chamados GLPI
    13671.rst
 
 
-Indices and tables
-==================
+Índices e Tabelas
+=================
 
 * :ref:`genindex`
 * :ref:`modindex`
