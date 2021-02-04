@@ -1,0 +1,33 @@
+13671
+=====
+
+|13671|
+
+Altera consulta de docentes para incluir docentes externos e docentes inativos, bem como campo co-orientador
+na página de cadastro de TCC. [#]_
+
+.. code-block:: sql
+
+    alter table prodocente.trabalho_fim_curso add column id_orientador_externo integer;
+    alter table prodocente.trabalho_fim_curso add constraint ifpa_id_orientador_externo_fkey
+    foreign key (id_orientador_externo) references ensino.docente_externo (id_docente_externo);
+
+    alter table prodocente.trabalho_fim_curso add column id_co_orientador integer;
+    alter table prodocente.trabalho_fim_curso add constraint ifpa_id_co_orientador_fkey
+    foreign key (id_co_orientador) references rh.servidor (id_servidor);
+
+    alter table prodocente.trabalho_fim_curso add column id_co_orientador_externo integer;
+    alter table prodocente.trabalho_fim_curso add constraint ifpa_id_co_orientador_externo_fkey
+    foreign key (id_co_orientador_externo) references ensino.docente_externo (id_docente_externo);
+
+
+.. |13671| raw:: html
+
+   <a href="https://glpi.ifpa.edu.br/glpi/front/ticket.form.php?id=13671" target="_blank">
+    https://glpi.ifpa.edu.br/glpi/front/ticket.form.php?id=13671
+   </a>
+
+
+.. rubric:: Notas
+
+.. [#] Trabalho de Conclusão de Curso
